@@ -137,7 +137,7 @@ header {
 .card {
   color: var(--primary-color);
   width: 16rem;
-  background: #252525;
+  border: 1px solid var(--primary-color);
   border-radius: 15px;
   flex-direction: column;
   gap: 10px;
