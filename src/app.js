@@ -14,14 +14,10 @@ document.querySelector('.work')
         </div>
     </a>`, ''
 );
-const {Howl, Howler} = require('howler');
-var sound = new Howl({
-    src: ['audio.mp3'],
-    html5: true,
-    autoplay: true,
-    volume: 1.0,
-    format: 'mp3'
-  });
-  
-sound.play();
+var player = require('play-sound')(opts = {})
+
+// $ mplayer foo.mp3 
+player.play('audio.mp3', function(err){
+  if (err) throw err
+})
   

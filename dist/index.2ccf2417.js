@@ -521,7 +521,7 @@ const detail = list.filter((x)=>x.mal_id === +id
 )?.[0];
 const nextIndex = list.findIndex((x)=>x.mal_id === +id
 ) + 1;
-const nextId = list[nextIndex]?.mal_id || list[0].mal_id;
+const nextId = 3334;
 document.querySelector('.detail').innerHTML = `
     <a class="link" href="detail.html?${nextId}">Next volume ></a>
     <div class="volume">
@@ -543,4 +543,4 @@ module.exports = JSON.parse("[{\"mal_id\":32379,\"url\":\"https://myanimelist.ne
 
 },{}]},["d8Pj5","jV4mf"], "jV4mf", "parcelRequire4e41")
 
-//# sourceMappingURL=detail.2ccf2417.js.map
+//# sourceMappingURL=index.2ccf2417.js.map
