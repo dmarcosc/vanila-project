@@ -542,16 +542,17 @@ async function makeRequestById() {
         method: 'get',
         url: 'https://api.jikan.moe/v4/anime?q=berserk&sfw'
     };
-    let res = await axios(config);
-    if (res.status == 200) {
-        const list = res.data.data;
-        const id = window.location.search.substr(1);
-        const detail = list.filter((x)=>x.mal_id === +id
-        )?.[0];
-        const nextIndex = list.findIndex((x)=>x.mal_id === +id
-        ) + 1;
-        const nextId = list[nextIndex]?.mal_id || list[0].mal_id;
-        document.querySelector('.detail').innerHTML = `
+    try {
+        let res = await axios(config);
+        if (res.status == 200) {
+            const list = res.data.data;
+            const id = window.location.search.substr(1);
+            const detail = list.filter((x)=>x.mal_id === +id
+            )?.[0];
+            const nextIndex = list.findIndex((x)=>x.mal_id === +id
+            ) + 1;
+            const nextId = list[nextIndex]?.mal_id || list[0].mal_id;
+            document.querySelector('.detail').innerHTML = `
             <a class="link" href="detail.html?${nextId}">Next volume ></a>
             <div class="volume">
                 <img class="volume-img" src="${detail?.images.jpg.image_url}" alt="Card image cap">
@@ -565,7 +566,12 @@ async function makeRequestById() {
             <p>Trailer</p>
             <iframe width="320" height="285"src="${detail?.trailer.embed_url || 'https://www.youtube.com/embed/ZXjaTICqRf8'}"></iframe>
             <ul class="volume-genres">Genres: ${detail?.genres.map((x)=>'<li>' + x.name + '</li>'
-        ).join('') || 'unknown'}</ul>`;
+            ).join('') || 'unknown'}</ul>`;
+        } else if (res.status == "429") document.querySelector('.detail').innerHTML = `<h1>Too many request, try again !</h1>`;
+        else console.log(res.message);
+    } catch (err) {
+        console.log(err);
+        document.querySelector('.detail').innerHTML = `<h1>Too many request, try again !</h1>`;
     }
 }
 window.onload = function(event) {

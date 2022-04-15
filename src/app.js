@@ -32,7 +32,7 @@ async function makeRequestById() {
         method: 'get',
         url: 'https://api.jikan.moe/v4/anime?q=berserk&sfw'
     }
-
+try {
     let res = await axios(config)
     if (res.status == 200) {
         const list = res.data.data
@@ -55,7 +55,16 @@ async function makeRequestById() {
             <p>Trailer</p>
             <iframe width="320" height="285"src="${detail?.trailer.embed_url || 'https://www.youtube.com/embed/ZXjaTICqRf8'}"></iframe>
             <ul class="volume-genres">Genres: ${detail?.genres.map(x => '<li>'+ x.name + '</li>').join('') || 'unknown'}</ul>`;
+    } else if (res.status == "429") {
+        document.querySelector('.detail').innerHTML = `<h1>Too many request, try again !</h1>`;
+    } else {
+        console.log(res.message)
     }
+} catch (err) {
+    console.log(err)
+    document.querySelector('.detail').innerHTML = `<h1>Too many request, try again !</h1>`;
+}
+
 }
 
 window.onload = function(event) {
