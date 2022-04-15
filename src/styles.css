@@ -11,6 +11,7 @@
 body {
     color: var(--primary-color);
     background-color: #101111;
+    min-height: calc(100vh - 30px);
 }
 .hero{
   height: calc(100vh - 30px);
@@ -44,7 +45,7 @@ header {
     color: var(--secondary-color);
 
 }
-article {
+.hero-main {
   margin-top: 60px;
   padding:0 15px;
 }
@@ -98,11 +99,16 @@ article {
     font-weight: 400;
   }
 }
-/** WORK **/
+/******************* WORK *******************/
 .work {
   display: flex;
   justify-content: space-around;
   flex-flow: row wrap;
+}
+@media (width > 1000px) {
+  .work {
+    justify-content: flex-start;
+  }
 }
 
 .card {
@@ -145,7 +151,7 @@ article {
   bottom: 15px;
 }
 
-/** DETAIL **/
+/************* DETAIL ******************/
 .detail{
   display: flex;
   flex-direction: column;
@@ -176,4 +182,57 @@ article {
   flex-direction: column;
   gap: 10px;
   margin-bottom: 15px;
+}
+.volume-genres{
+  list-style: circle;
+}
+.volume-genres>li{
+  margin-left: 20px;
+}
+/********* AUTHOR **********/
+.author-main{
+  padding: 0 15px;
+  margin-bottom:20px;
+}
+.author-title{
+  margin-bottom: 20px;
+}
+.author-content{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+.author-img{
+max-width: 350px;
+}
+@media (width > 1350px) {
+  .author-content{ 
+    flex-direction: row;
+    align-items: flex-start;
+  }
+  .author-img{
+    height: fit-content;
+  }
+}
+.figure {
+  display: flex;
+  flex-direction: column;
+}
+/********* SOURCES **********/
+.sources-section{
+  padding: 10px 45px;
+}
+.link{
+text-decoration: none;
+color: var(--primary-color);
+  cursor:pointer;
+}
+.link:hover{
+  color: var(--secondary-color) !important;
+}
+.link:visited{
+  text-decoration: none;
+  color: var(--primary-color);
+  cursor:pointer;
 }

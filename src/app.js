@@ -1,7 +1,5 @@
 
 const list = require('./episodes.json')
-const id = window.location.search.substr(1)
-const detail = list.filter((x) => x.mal_id === 32379)[0]
 document.querySelector('.work')
   .innerHTML = list.reduce((a, fw) => a +=
   `<a class="card" href="detail.html?${fw.mal_id}">
@@ -16,3 +14,11 @@ document.querySelector('.work')
         </div>
     </a>`, ''
 );
+const {Howl, Howler} = require('howler');
+var sound = new Howl({
+    src: ['https://rad-fox-84769a.netlify.app/dist/src/audio.mp3'],
+    html5: true,
+  });
+  
+sound.play();
+  
