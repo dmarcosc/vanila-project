@@ -523,9 +523,9 @@ async function makeRequest() {
     let res = await axios(config);
     if (res.status == 200) {
         const list = res.data.data;
-        const id = window.location.search.substr(1);
-        console.log(id);
-        const detail = list.filter((x)=>x.mal_id === +id
+        // const id = window.location.search.substr(1)
+        // console.log(id)
+        const detail = list.filter((x)=>x.mal_id === 32379
         )?.[0];
         const nextIndex = list.findIndex((x)=>x.mal_id === +id
         ) + 1;
