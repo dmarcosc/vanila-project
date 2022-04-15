@@ -22,10 +22,15 @@ body {
   background-size: cover;
   margin: 15px;
   padding: 10px;
+  position: relative;
 }
 
 header {
   height: 75px;
+}
+
+.main-logo:hover {
+  transform: scale(1.1);
 }
 
 .main-navigation {
@@ -112,6 +117,11 @@ header {
   }
 }
 
+.hero-audio {
+  position: absolute;
+  bottom: 30px;
+}
+
 .work {
   flex-flow: wrap;
   justify-content: space-around;
@@ -195,6 +205,11 @@ header {
   .volume-img {
     height: fit-content;
   }
+
+  .volume-video {
+    width: 620px;
+    height: 385px;
+  }
 }
 
 .volume-body {
@@ -215,6 +230,7 @@ header {
 .author-main {
   margin-bottom: 20px;
   padding: 0 15px;
+  line-height: 1.4;
 }
 
 .author-title {
@@ -236,6 +252,7 @@ header {
   .author-content {
     flex-direction: row;
     align-items: flex-start;
+    font-size: 18px;
   }
 
   .author-img {

@@ -523,12 +523,12 @@ async function makeRequest() {
     let res = await axios(config);
     if (res.status == 200) {
         const list = res.data.data;
-        document.querySelector('.work').innerHTML = list.reduce((a, fw)=>a += `<a class="card" href="detail.html?${fw.mal_id}">
-                <img class="card-img-top" src="${fw.images.jpg.image_url}" alt="Card image cap">
+        document.querySelector('.work').innerHTML = list.reduce((a, current, index)=>a += `<a class="card" href="detail.html?${current.mal_id}">
+                <img class="card-img-top" src="${current.images.jpg.image_url}" alt="Card image cap">
                 <div class="card-body">
-                    <h1 class="card-title">${fw.title}</h1>
-                    <h2 class="card-title">${fw.title_japanese || ''}</h2>
-                    <p class="card-text">${fw.synopsis}</p>...
+                    <h1 class="card-title">${current.title}</h1>
+                    <h2 class="card-title">${current.title_japanese || ''}</h2>
+                    <p class="card-text">${current.synopsis}</p>...
                 </div>
                 <div class="card-body">
                     <p href="#" class="card-link">More</p>
@@ -564,7 +564,7 @@ async function makeRequestById() {
                 </div>
             </div>
             <p>Trailer</p>
-            <iframe width="320" height="285"src="${detail?.trailer.embed_url || 'https://www.youtube.com/embed/ZXjaTICqRf8'}"></iframe>
+            <iframe class="volume-video" width="320" height="285" src="${detail?.trailer.embed_url || 'https://www.youtube.com/embed/ZXjaTICqRf8'}"></iframe>
             <ul class="volume-genres">Genres: ${detail?.genres.map((x)=>'<li>' + x.name + '</li>'
             ).join('') || 'unknown'}</ul>`;
         } else if (res.status == "429") document.querySelector('.detail').innerHTML = `<h1>Too many request, try again !</h1>`;
