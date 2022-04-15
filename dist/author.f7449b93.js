@@ -142,13 +142,13 @@
       this[globalName] = mainExports;
     }
   }
-})({"d8Pj5":[function(require,module,exports) {
+})({"h8IRG":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
 var HMR_PORT = null;
 var HMR_SECURE = false;
 var HMR_ENV_HASH = "d6ea1d42532a7575";
-module.bundle.HMR_BUNDLE_ID = "7923cfe92ccf2417";
+module.bundle.HMR_BUNDLE_ID = "80c86cf3f7449b93";
 function _toConsumableArray(arr) {
     return _arrayWithoutHoles(arr) || _iterableToArray(arr) || _unsupportedIterableToArray(arr) || _nonIterableSpread();
 }
@@ -513,31 +513,8 @@ function hmrAcceptRun(bundle, id) {
     acceptedAssets[id] = true;
 }
 
-},{}],"jV4mf":[function(require,module,exports) {
-const list = require('./episodes.json');
-const id = window.location.search.substr(1);
-console.log(id, window.location.search);
-const detail = list.filter((x)=>x.mal_id === +id
-)?.[0];
-const nextIndex = list.findIndex((x)=>x.mal_id === +id
-) + 1;
-const nextId = list[nextIndex]?.mal_id || list[0].mal_id;
-document.querySelector('.detail').innerHTML = `
-    <a class="link" href="detail.html?${nextId}">Next volume ></a>
-    <div class="volume">
-        <img class="volume-img" src="${detail.images.jpg.image_url}" alt="Card image cap">
-        <div class="volume-body">
-            <h1 class="volume-title">${detail.title}</h1>
-            <h2 class="volume-title">${detail.title_japanese || ''}</h2>
-            <p class="volume-text">${detail.synopsis}</p>
-            <p>Year: ${detail.year || 'unknown'}</p>
-        </div>
-    </div>
-    <p>Trailer</p>
-    <iframe width="320" height="285"src="${detail.trailer.embed_url || 'https://www.youtube.com/embed/ZXjaTICqRf8'}"></iframe>
-    <ul class="volume-genres">Genres: ${detail.genres.map((x)=>'<li>' + x.name + '</li>'
-).join('') || 'unknown'}</ul>`;
+},{}],"2GkgX":[function(require,module,exports) {
 
-},{"./episodes.json":"99NvN"}]},["d8Pj5","jV4mf"], "jV4mf", "parcelRequire4e41")
+},{}]},["h8IRG","2GkgX"], "2GkgX", "parcelRequire4e41")
 
-//# sourceMappingURL=index.2ccf2417.js.map
+//# sourceMappingURL=author.f7449b93.js.map

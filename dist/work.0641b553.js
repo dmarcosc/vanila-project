@@ -533,4 +533,4 @@ module.exports = JSON.parse("[{\"mal_id\":32379,\"url\":\"https://myanimelist.ne
 
 },{}]},["6IXwR","bNKaB"], "bNKaB", "parcelRequire4e41")
 
-//# sourceMappingURL=index.0641b553.js.map
+//# sourceMappingURL=work.0641b553.js.map
