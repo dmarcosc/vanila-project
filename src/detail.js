@@ -14,7 +14,7 @@ async function makeRequest() {
         // const id = window.location.search.substr(1)
         // console.log(id)
         const detail = list.filter((x) => x.mal_id === 32379)?.[0]
-        const nextIndex = list.findIndex((x) => x.mal_id === +id) + 1
+        const nextIndex = list.findIndex((x) => x.mal_id === +32379) + 1
         const nextId = list[nextIndex]?.mal_id || list[0].mal_id
         document.querySelector('.detail').innerHTML =
             `
