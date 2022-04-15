@@ -1,4 +1,3 @@
-
 const list = require('./episodes.json')
 document.querySelector('.work')
   .innerHTML = list.reduce((a, fw) => a +=

@@ -1,7 +1,7 @@
 
 const list = require('./episodes.json')
 const id = window.location.search.substr(1)
-console.log(id,window.location.search)
+console.log(id)
 const detail = list.filter((x) => x.mal_id === +id)?.[0]
 const nextIndex = list.findIndex((x) => x.mal_id === +id) + 1
 const nextId = list[nextIndex]?.mal_id || list[0].mal_id
