@@ -1,3 +1,19 @@
+const axios = require('axios');
+
+async function makeRequest() {
+
+    const config = {
+        method: 'get',
+        url: 'https://api.jikan.moe/v4/anime?q=berserk&sfw'
+    }
+
+    let res = await axios(config)
+
+    console.log(res.status);
+}
+
+makeRequest();
+
 const list = require('./episodes.json')
 document.querySelector('.work')
   .innerHTML = list.reduce((a, fw) => a +=
