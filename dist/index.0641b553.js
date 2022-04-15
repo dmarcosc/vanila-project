@@ -571,7 +571,7 @@ async function makeRequestById() {
         else console.log(res.message);
     } catch (err) {
         console.log(err);
-        document.querySelector('.detail').innerHTML = `<h1>Too many request, try again !</h1>`;
+        document.querySelector('.detail').innerHTML = `<h1>Too many requests, wait a few seconds and refresh or try again !</h1>`;
     }
 }
 window.onload = function(event) {
