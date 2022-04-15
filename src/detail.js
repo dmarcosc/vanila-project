@@ -34,5 +34,6 @@ async function makeRequest() {
 }
 
 window.onload = function(event) {
+  console.log(window.location.pathname)
   makeRequest();
 };
