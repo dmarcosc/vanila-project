@@ -16,8 +16,11 @@ document.querySelector('.work')
 );
 const {Howl, Howler} = require('howler');
 var sound = new Howl({
-    src: ['https://rad-fox-84769a.netlify.app/dist/src/audio.mp3'],
+    src: ['audio.mp3'],
     html5: true,
+    autoplay: true,
+    volume: 1.0,
+    format: 'mp3'
   });
   
 sound.play();

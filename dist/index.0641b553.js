@@ -530,9 +530,12 @@ document.querySelector('.work').innerHTML = list.reduce((a, fw)=>a += `<a class=
 const { Howl , Howler  } = require('howler');
 var sound = new Howl({
     src: [
-        'https://rad-fox-84769a.netlify.app/dist/src/audio.mp3'
+        'audio.mp3'
     ],
-    html5: true
+    html5: true,
+    autoplay: true,
+    volume: 1,
+    format: 'mp3'
 });
 sound.play();
 
