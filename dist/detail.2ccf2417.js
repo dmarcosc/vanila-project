@@ -523,11 +523,10 @@ async function makeRequest() {
     let res = await axios(config);
     if (res.status == 200) {
         const list = res.data.data;
-        // const id = window.location.search.substr(1)
-        // console.log(id)
-        const detail = list.filter((x)=>x.mal_id === 32379
+        const id = window.location.search.substr(1);
+        const detail = list.filter((x)=>x.mal_id === +id
         )?.[0];
-        const nextIndex = list.findIndex((x)=>x.mal_id === 32379
+        const nextIndex = list.findIndex((x)=>x.mal_id === +id
         ) + 1;
         const nextId = list[nextIndex]?.mal_id || list[0].mal_id;
         document.querySelector('.detail').innerHTML = `
@@ -547,7 +546,9 @@ async function makeRequest() {
         ).join('') || 'unknown'}</ul>`;
     }
 }
-makeRequest();
+window.onload = function(event) {
+    makeRequest();
+};
 
 },{"axios":"jo6P5"}],"jo6P5":[function(require,module,exports) {
 module.exports = require('./lib/axios');
