@@ -2,8 +2,8 @@
 const list = require('./episodes.json')
 const id = window.location.search.substr(1)
 console.log(id,window.location.search)
-const detail = list.filter((x) => x.mal_id === +id)?.[0]
-const nextIndex = list.findIndex((x) => x.mal_id === +id) + 1
+const detail = list[0]
+// const nextIndex = list.findIndex((x) => x.mal_id === +id) + 1
 const nextId = 3334
 document.querySelector('.detail')
   .innerHTML =
