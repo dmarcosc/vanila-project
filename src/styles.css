@@ -297,6 +297,22 @@ header {
 .author-img{
 max-width: 350px;
 }
+.book:hover{
+  transform: scale(1.1);
+}
+.sword {
+  height: 35px;
+  margin-left: 10px;
+  animation: hideshow 4s linear infinite;
+}
+@keyframes hideshow {
+  from{
+    transform: rotate(0deg);
+  }
+  to{
+    transform: rotate(360deg);
+  }
+} 
 @media (width > 1350px) {
   .author-content{ 
     flex-direction: row;
