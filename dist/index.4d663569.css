@@ -25,6 +25,17 @@ body {
   position: relative;
 }
 
+.header-title {
+  font-size: 2rem;
+  font-style: italic;
+}
+
+.header-wrapper {
+  align-items: center;
+  gap: 10px;
+  display: flex;
+}
+
 header {
   height: 75px;
 }
@@ -67,9 +78,29 @@ header {
 }
 
 .hero-subtitle {
+  letter-spacing: 5px;
+  background: linear-gradient(90deg, #000, #fff, #000);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-repeat: no-repeat;
+  background-size: 80%;
+  -webkit-background-clip: text;
+  background-clip: text;
   margin-right: 10px;
   font-size: 12px;
   font-weight: 400;
+  animation: shine 5s linear infinite;
+  position: relative;
+}
+
+@keyframes shine {
+  0% {
+    background-position-x: -500%;
+  }
+
+  100% {
+    background-position-x: 500%;
+  }
 }
 
 .hero-content {
@@ -80,6 +111,32 @@ header {
 
 .hero-img {
   width: inherit;
+}
+
+@keyframes circle {
+  0% {
+    clip-path: circle(100%);
+  }
+
+  25% {
+    clip-path: circle(20%);
+  }
+
+  50% {
+    clip-path: circle(20% at 12% 84%);
+  }
+
+  75% {
+    clip-path: circle(20% at 93% 51%);
+  }
+
+  100% {
+    clip-path: circle(20% at 70% 10%);
+  }
+}
+
+.clip {
+  animation: circle 5s;
 }
 
 @media (min-width: 880.001px) {
@@ -118,8 +175,10 @@ header {
 }
 
 .hero-audio {
+  z-index: 9;
   position: absolute;
   bottom: 30px;
+  right: 20px;
 }
 
 .work {
@@ -178,10 +237,15 @@ header {
 }
 
 .detail {
-  color: var(--primary-color);
+  color: var(--secondary-color);
+  background-image: url("berserkcrew.64373e8e.png");
+  background-position: bottom;
+  background-repeat: no-repeat;
   flex-direction: column;
   gap: 20px;
   padding: 10px;
+  font-size: 18px;
+  font-weight: 700;
   display: flex;
 }
 
@@ -192,8 +256,39 @@ header {
   display: flex;
 }
 
+.destacada {
+  width: 100%;
+  height: 500px;
+  background-image: url("mobile.6c13679c.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media only screen and (min-width: 480px) {
+  .destacada {
+    background-image: url("mobile.6c13679c.jpg");
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .destacada {
+    background-image: url("tablet.6d83cb52.jpg");
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+  .destacada {
+    background-image: url("desktop.6bd36fe9.jpg");
+  }
+}
+
 .volume-img {
   width: fit-content;
+}
+
+.volume-text {
+  background-color: #000;
 }
 
 @media (min-width: 650.001px) {
@@ -220,6 +315,9 @@ header {
 }
 
 .volume-genres {
+  width: fit-content;
+  background-color: #000;
+  padding: 10px;
   list-style: circle;
 }
 
@@ -283,6 +381,23 @@ header {
   color: var(--primary-color);
   cursor: pointer;
   text-decoration: none;
+}
+
+footer {
+  width: 96%;
+  border-top: 1px solid var(--secondary-color);
+  padding: 10px;
+  position: absolute;
+  bottom: 20px;
+}
+
+.footer-logo {
+  height: 30px;
+}
+
+.footer-web {
+  margin-top: 60px;
+  position: relative;
 }
 
 /*# sourceMappingURL=index.4d663569.css.map */

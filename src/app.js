@@ -54,7 +54,11 @@ try {
             </div>
             <p>Trailer</p>
             <iframe class="volume-video" width="320" height="285" src="${detail?.trailer.embed_url || 'https://www.youtube.com/embed/ZXjaTICqRf8'}"></iframe>
-            <ul class="volume-genres">Genres: ${detail?.genres.map(x => '<li>'+ x.name + '</li>').join('') || 'unknown'}</ul>`;
+            <ul class="volume-genres">Genres: ${detail?.genres.map(x => '<li>'+ x.name + '</li>').join('') || 'unknown'}</ul>
+            `;
+         document.querySelector('.random').addEventListener('click', function(e) {
+            window.location.href = "https://berserkshop.com/"
+         })
     } else if (res.status == "429") {
         document.querySelector('.detail').innerHTML = `<h1>Too many request, try again !</h1>`;
     } else {
