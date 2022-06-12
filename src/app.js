@@ -13,7 +13,7 @@ async function makeRequest() {
         document.querySelector('.work')
         .innerHTML = list.reduce((a, current, index) => a +=
         `<a class="card" href="detail.html?${current.mal_id}">
-                <img class="card-img-top" src="${current.images.jpg.image_url}" alt="Card image cap">
+                <img loading="lazy" class="card-img-top" src="${current.images.jpg.image_url}" alt="Card image cap">
                 <div class="card-body">
                     <h1 class="card-title">${current.title}</h1>
                     <h2 class="card-title">${current.title_japanese || ''}</h2>
@@ -44,7 +44,7 @@ try {
             `
             <a class="link" href="detail.html?${nextId}">Next volume ></a>
             <div class="volume">
-                <img class="volume-img" src="${detail?.images.jpg.image_url}" alt="Card image cap">
+                <img loading="lazy" class="volume-img" src="${detail?.images.jpg.image_url}" alt="Card image cap">
                 <div class="volume-body">
                     <h1 class="volume-title">${detail?.title}</h1>
                     <h2 class="volume-title">${detail?.title_japanese || ''}</h2>
@@ -53,7 +53,7 @@ try {
                 </div>
             </div>
             <p>Trailer</p>
-            <iframe class="volume-video" width="320" height="285" src="${detail?.trailer.embed_url || 'https://www.youtube.com/embed/ZXjaTICqRf8'}"></iframe>
+            <iframe loading="lazy" class="volume-video" width="320" height="285" src="${detail?.trailer.embed_url || 'https://www.youtube.com/embed/ZXjaTICqRf8'}"></iframe>
             <ul class="volume-genres">Genres: ${detail?.genres.map(x => '<li>'+ x.name + '</li>').join('') || 'unknown'}</ul>
             `;
          document.querySelector('.random').addEventListener('click', function(e) {
