@@ -288,7 +288,7 @@ header {
 }
 
 .volume-text {
-  background-color: #000;
+  background-color: #181717;
 }
 
 @media (min-width: 650.001px) {
@@ -316,7 +316,7 @@ header {
 
 .volume-genres {
   width: fit-content;
-  background-color: #000;
+  background-color: #1b1a1a;
   padding: 10px;
   list-style: circle;
 }

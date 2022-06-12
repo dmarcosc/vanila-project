@@ -249,7 +249,7 @@ header {
   width: fit-content;
 }
 .volume-text{
-  background-color: #000;
+  background-color: rgb(24, 23, 23);
 }
 @media (width > 650px) {
   .volume {
@@ -273,7 +273,7 @@ header {
 .volume-genres{
   padding: 10px;
   list-style: circle;
-  background-color: #000;
+  background-color: rgb(27, 26, 26);
   width: fit-content;
 }
 .volume-genres>li{
